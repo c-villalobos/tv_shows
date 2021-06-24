@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-8 sm-6 offset-2">
+            <h3>Add a New Show</h3>
+            <a href="/">Go back</a><br><br>
+            <div class="card p-3">
+                <form action="" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                        <label class='text-success' for="title">Title</label>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col form-floating">
+                            <input type="text" class="form-control" id="network" placeholder="Newtork" name="network"></input>
+                            <label class='text-success' for="network">Network</label>
+                        </div>
+                        <div class="col form-floating">
+                            <input type="date" class="form-control" id="release_date" placeholder="Show description" name="release_date"></input>
+                            <label class='text-success' for="release_date">Release date</label>
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <textarea type="text" class="form-control" id="description" placeholder="Show description" name="description"></textarea>
+                        <label class='text-success' for="description">Description</label>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success mt-3">Create</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
