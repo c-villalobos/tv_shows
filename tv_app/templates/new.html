@@ -7,6 +7,13 @@
             <h3>Add a New Show</h3>
             <a href="/">Go back</a><br><br>
             <div class="card p-3">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="{{message.tags}}"{% endif %}>{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 <form action="" method='POST'>
                     {% csrf_token %}
                     <div class="form-floating mb-3">
